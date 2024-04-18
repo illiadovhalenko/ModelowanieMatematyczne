@@ -50,15 +50,21 @@ public class Graph {
         int numberOfSteps = 0;
         boolean down = true;
         Node currentNode = startPoint;
-        System.out.println(currentNode.getRight());
+//        System.out.println(currentNode.getRight());
         while (currentNode.getRight()!=null){
             while((down ? currentNode.getDown() : currentNode.getUp())!= null){
+                System.out.println("0"+currentNode);
                 if(currentNode.isFinalDestination()){
-                    System.out.println("Found final destination");
+                    System.out.println("Found final destination"+ currentNode);
                     return numberOfSteps;
                 }
                 currentNode = (down ? currentNode.getDown() : currentNode.getUp());
                 numberOfSteps++;
+            }
+            System.out.println("1"+currentNode);
+            if(currentNode.isFinalDestination()){
+                System.out.println("Found final destination" + currentNode);
+                return numberOfSteps;
             }
             currentNode = currentNode.getRight();
             down = !down;
