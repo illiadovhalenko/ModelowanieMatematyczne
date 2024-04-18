@@ -74,14 +74,50 @@ public class Graph {
      * 3 -- left
      * @return -- number of steps to reach finalDestination
      */
-    public int secondMethod(){
+//    public int secondMethod(){
+//        int numberOfSteps = 0;
+//        Node currentNode = startPoint;
+//        currentNode.setVisited();
+//        int direction = 0;
+//        while(!currentNode.isFinalDestination()){
+//            System.out.println("lalal");
+//        }
+//    }
+    public int randomDirectionMethod(){
         int numberOfSteps = 0;
         Node currentNode = startPoint;
-        currentNode.setVisited();
         int direction = 0;
+        Random random = new Random();
         while(!currentNode.isFinalDestination()){
-
+            direction = random.nextInt(4);
+            switch (direction){
+                case 0 -> {
+                    if(currentNode.getDown()!=null){
+                        currentNode = currentNode.getDown();
+                        numberOfSteps++;
+                    }
+                }
+                case 1->{
+                    if(currentNode.getRight()!=null){
+                        currentNode = currentNode.getRight();
+                        numberOfSteps++;
+                    }
+                }
+                case 2 ->{
+                    if(currentNode.getUp()!=null){
+                        currentNode = currentNode.getUp();
+                        numberOfSteps++;
+                    }
+                }
+                case 3->{
+                    if(currentNode.getLeft()!=null){
+                        currentNode = currentNode.getLeft();
+                        numberOfSteps++;
+                    }
+                }
+            }
         }
+        return numberOfSteps;
     }
 
     public int thirdMethod(){
