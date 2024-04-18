@@ -80,7 +80,7 @@ public class Graph {
         currentNode.setVisited();
         int direction = 0;
         while(!currentNode.isFinalDestination()){
-
+            System.out.println("lalal");
         }
     }
 
