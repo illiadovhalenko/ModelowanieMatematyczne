@@ -27,6 +27,9 @@ public class Node {
     public Node getUp(){
         return up;
     }
+    public Node getLeft(){
+        return left;
+    }
     @Override
     public String toString(){
         return "("+y+" "+x+")";
